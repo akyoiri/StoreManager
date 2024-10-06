@@ -13,21 +13,29 @@ namespace StoreManager.Database
     class DBConnect
     {
         private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string uid;
-        private string password;
+        public string server;
+        public string database;
+        public string username;
+        public string password;
+        public string port;
 
         //Constructor
         public DBConnect()
         {
             server = "localhost";
             database = "store_manager";
-            uid = "root";
-            password = "bajed";
+            username = "root";
+            password = ""; //your server password
+            port = "3306";
+
+            //implement connection
             string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            connectionString = "Server=" + server + ";" +
+                "Database=" + database + ";" +
+                "User=" + username + ";" +
+                "Password=" + password + ";" +
+                "Port=" + port + ";" +
+                "Convert Zero Datetime=true";
 
             connection = new MySqlConnection(connectionString);
             connection.Open();
