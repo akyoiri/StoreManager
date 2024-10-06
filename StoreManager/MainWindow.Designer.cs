@@ -44,6 +44,7 @@ namespace StoreManager
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.PanelPOS = new System.Windows.Forms.Panel();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.TbPosSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace StoreManager
             this.LblSubtotal = new ReaLTaiizor.Controls.HeaderLabel();
             this.LblTax = new ReaLTaiizor.Controls.HeaderLabel();
             this.LblTotal = new ReaLTaiizor.Controls.HeaderLabel();
-            this.TbPosSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.PnlProductsPanel = new CustomComponents.ProductsPanel();
             this.PnlOrdersPanel = new CustomComponents.OrdersPanel();
             this.PnlNavigation.SuspendLayout();
@@ -197,7 +197,7 @@ namespace StoreManager
             this.PanelPOS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelPOS.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelPOS.BackColor = System.Drawing.Color.Silver;
             this.PanelPOS.Controls.Add(this.materialCard1);
             this.PanelPOS.Controls.Add(this.label3);
             this.PanelPOS.Controls.Add(this.label2);
@@ -231,6 +231,53 @@ namespace StoreManager
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(646, 47);
             this.materialCard1.TabIndex = 9;
+            // 
+            // TbPosSearch
+            // 
+            this.TbPosSearch.AllowPromptAsInput = true;
+            this.TbPosSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TbPosSearch.AnimateReadOnly = false;
+            this.TbPosSearch.AsciiOnly = false;
+            this.TbPosSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TbPosSearch.BeepOnError = false;
+            this.TbPosSearch.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.TbPosSearch.Depth = 0;
+            this.TbPosSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TbPosSearch.HidePromptOnLeave = false;
+            this.TbPosSearch.HideSelection = true;
+            this.TbPosSearch.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.TbPosSearch.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("TbPosSearch.LeadingIcon")));
+            this.TbPosSearch.Location = new System.Drawing.Point(0, -1);
+            this.TbPosSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.TbPosSearch.Mask = "";
+            this.TbPosSearch.MaxLength = 32767;
+            this.TbPosSearch.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.TbPosSearch.Name = "TbPosSearch";
+            this.TbPosSearch.PasswordChar = '\0';
+            this.TbPosSearch.PrefixSuffixText = null;
+            this.TbPosSearch.PromptChar = '_';
+            this.TbPosSearch.ReadOnly = false;
+            this.TbPosSearch.RejectInputOnFirstFailure = false;
+            this.TbPosSearch.ResetOnPrompt = true;
+            this.TbPosSearch.ResetOnSpace = true;
+            this.TbPosSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TbPosSearch.SelectedText = "";
+            this.TbPosSearch.SelectionLength = 0;
+            this.TbPosSearch.SelectionStart = 0;
+            this.TbPosSearch.ShortcutsEnabled = true;
+            this.TbPosSearch.Size = new System.Drawing.Size(649, 48);
+            this.TbPosSearch.SkipLiterals = true;
+            this.TbPosSearch.TabIndex = 0;
+            this.TbPosSearch.TabStop = false;
+            this.TbPosSearch.Text = "Search";
+            this.TbPosSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbPosSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.TbPosSearch.TrailingIcon = null;
+            this.TbPosSearch.UnderlineColor = System.Drawing.Color.Black;
+            this.TbPosSearch.UseSystemPasswordChar = false;
+            this.TbPosSearch.ValidatingType = null;
+            this.TbPosSearch.Enter += new System.EventHandler(this.TbPosSearch_Enter);
+            this.TbPosSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPosSearch_KeyPress);
             // 
             // label3
             // 
@@ -358,7 +405,7 @@ namespace StoreManager
             // 
             this.LblTaxOutput.BackColor = System.Drawing.Color.Transparent;
             this.LblTaxOutput.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTaxOutput.ForeColor = System.Drawing.Color.Black;
+            this.LblTaxOutput.ForeColor = System.Drawing.Color.White;
             this.LblTaxOutput.Location = new System.Drawing.Point(227, 71);
             this.LblTaxOutput.Name = "LblTaxOutput";
             this.LblTaxOutput.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -370,7 +417,7 @@ namespace StoreManager
             // 
             this.LblSubtotalOutput.BackColor = System.Drawing.Color.Transparent;
             this.LblSubtotalOutput.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSubtotalOutput.ForeColor = System.Drawing.Color.Black;
+            this.LblSubtotalOutput.ForeColor = System.Drawing.Color.White;
             this.LblSubtotalOutput.Location = new System.Drawing.Point(227, 48);
             this.LblSubtotalOutput.Name = "LblSubtotalOutput";
             this.LblSubtotalOutput.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -382,7 +429,7 @@ namespace StoreManager
             // 
             this.LblTotalOutput.BackColor = System.Drawing.Color.Transparent;
             this.LblTotalOutput.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotalOutput.ForeColor = System.Drawing.Color.Black;
+            this.LblTotalOutput.ForeColor = System.Drawing.Color.White;
             this.LblTotalOutput.Location = new System.Drawing.Point(227, 14);
             this.LblTotalOutput.Name = "LblTotalOutput";
             this.LblTotalOutput.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -395,7 +442,7 @@ namespace StoreManager
             this.LblSubtotal.AutoSize = true;
             this.LblSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.LblSubtotal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSubtotal.ForeColor = System.Drawing.Color.Black;
+            this.LblSubtotal.ForeColor = System.Drawing.Color.White;
             this.LblSubtotal.Location = new System.Drawing.Point(14, 48);
             this.LblSubtotal.Name = "LblSubtotal";
             this.LblSubtotal.Size = new System.Drawing.Size(79, 22);
@@ -407,7 +454,7 @@ namespace StoreManager
             this.LblTax.AutoSize = true;
             this.LblTax.BackColor = System.Drawing.Color.Transparent;
             this.LblTax.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTax.ForeColor = System.Drawing.Color.Black;
+            this.LblTax.ForeColor = System.Drawing.Color.White;
             this.LblTax.Location = new System.Drawing.Point(14, 71);
             this.LblTax.Name = "LblTax";
             this.LblTax.Size = new System.Drawing.Size(39, 22);
@@ -419,59 +466,12 @@ namespace StoreManager
             this.LblTotal.AutoSize = true;
             this.LblTotal.BackColor = System.Drawing.Color.Transparent;
             this.LblTotal.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.ForeColor = System.Drawing.Color.Black;
+            this.LblTotal.ForeColor = System.Drawing.Color.White;
             this.LblTotal.Location = new System.Drawing.Point(14, 14);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(78, 24);
             this.LblTotal.TabIndex = 0;
             this.LblTotal.Text = "TOTAL";
-            // 
-            // TbPosSearch
-            // 
-            this.TbPosSearch.AllowPromptAsInput = true;
-            this.TbPosSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbPosSearch.AnimateReadOnly = false;
-            this.TbPosSearch.AsciiOnly = false;
-            this.TbPosSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TbPosSearch.BeepOnError = false;
-            this.TbPosSearch.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbPosSearch.Depth = 0;
-            this.TbPosSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TbPosSearch.HidePromptOnLeave = false;
-            this.TbPosSearch.HideSelection = true;
-            this.TbPosSearch.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.TbPosSearch.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("TbPosSearch.LeadingIcon")));
-            this.TbPosSearch.Location = new System.Drawing.Point(0, -1);
-            this.TbPosSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.TbPosSearch.Mask = "";
-            this.TbPosSearch.MaxLength = 32767;
-            this.TbPosSearch.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.TbPosSearch.Name = "TbPosSearch";
-            this.TbPosSearch.PasswordChar = '\0';
-            this.TbPosSearch.PrefixSuffixText = null;
-            this.TbPosSearch.PromptChar = '_';
-            this.TbPosSearch.ReadOnly = false;
-            this.TbPosSearch.RejectInputOnFirstFailure = false;
-            this.TbPosSearch.ResetOnPrompt = true;
-            this.TbPosSearch.ResetOnSpace = true;
-            this.TbPosSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TbPosSearch.SelectedText = "";
-            this.TbPosSearch.SelectionLength = 0;
-            this.TbPosSearch.SelectionStart = 0;
-            this.TbPosSearch.ShortcutsEnabled = true;
-            this.TbPosSearch.Size = new System.Drawing.Size(649, 48);
-            this.TbPosSearch.SkipLiterals = true;
-            this.TbPosSearch.TabIndex = 0;
-            this.TbPosSearch.TabStop = false;
-            this.TbPosSearch.Text = "Search";
-            this.TbPosSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbPosSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbPosSearch.TrailingIcon = null;
-            this.TbPosSearch.UnderlineColor = System.Drawing.Color.Black;
-            this.TbPosSearch.UseSystemPasswordChar = false;
-            this.TbPosSearch.ValidatingType = null;
-            this.TbPosSearch.Enter += new System.EventHandler(this.TbPosSearch_Enter);
-            this.TbPosSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPosSearch_KeyPress);
             // 
             // PnlProductsPanel
             // 
@@ -504,7 +504,6 @@ namespace StoreManager
             this.Controls.Add(this.PnlNavigation);
             this.Name = "MainWindow";
             this.Text = "CLC Store Manager";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.PnlNavigation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxSettings)).EndInit();
