@@ -145,7 +145,7 @@ namespace StoreManager
             this.BtnPos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BtnPos.ButtonImage = ((System.Drawing.Image)(resources.GetObject("BtnPos.ButtonImage")));
             this.BtnPos.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            this.BtnPos.ButtonText = "CASHIERINGS";
+            this.BtnPos.ButtonText = "CASHIERING";
             this.BtnPos.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnPos.ClickTextColor = System.Drawing.Color.Gainsboro;
             this.BtnPos.CornerRadius = 5;
