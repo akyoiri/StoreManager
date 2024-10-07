@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace StoreManager
 {
-    public partial class Inventory : Form
+    public partial class Form1 : Form
     {
-        public Inventory()
+        public Form1()
         {
             InitializeComponent();
         }
-
     }
 }
