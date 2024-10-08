@@ -10,7 +10,7 @@ using StoreObjects;
 
 namespace StoreManager.Database
 {
-    class DBConnect
+    public class DBConnect
     {
         private MySqlConnection connection;
         public string server;

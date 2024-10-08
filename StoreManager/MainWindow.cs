@@ -20,10 +20,12 @@ namespace StoreManager
     public partial class MainWindow : Form
     {
 
-        int currentPage = 1;
+        private int currentPage = 1;
 
-        ProductsAndOrdersLinker productsAndOrdersLinker;
-        DBConnect dbConnection = new DBConnect();
+        private DBConnect dbConnection = new DBConnect();
+
+        private ProductsAndOrdersLinker productsAndOrdersLinker;
+        private UsrCtrlCashiering buyView;
 
         public MainWindow()
         {
@@ -33,44 +35,17 @@ namespace StoreManager
             //this.PnlProductsPanel.InitializeDisplay(dbConnection.GetItemList(), BtnPdpClicked);
             //this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
             //this.PnlProductsPanel.PanelSizeUpdated();
+            this.buyView = new UsrCtrlCashiering(this.dbConnection);
 
-        }
-
-        public void BtnPdpClicked(object sender, EventArgs e)
-        {
-            ProductDisplayPanel PdpPressed = productsAndOrdersLinker.GetProdDisplayPanel(sender.GetHashCode());
-            this.PnlOrdersPanel.AddOrder(PdpPressed.Item.ToCartItem());
-            this.PnlOrdersPanel.UpdateCheckoutLabels();
-            //this.PnlOrdersPanel.DisplayOrders();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            //this.PnlProductsPanel.PanelSizeUpdated();
-            this.PnlProductsPanel.InitializeItems(dbConnection.GetItemList(), this.BtnPdpClicked);
-            this.PnlProductsPanel.InitializeCards();
-            this.PnlProductsPanel.ArrangeProductPanels(currentPage);
 
-            this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
-
-            this.PnlOrdersPanel.InitializeCheckoutLabels(this.LblTotalOutput, this.LblTaxOutput, this.LblSubtotalOutput);
-            this.CmbSizes.Items.AddRange(dbConnection.GetSizesList());
-            //this.MinimumSize = this.Size;
+            buyView.Size = this.PnlContent.Size;
+            buyView.InitializeCardView();
         }
 
-        private void BtnNextPage_Click(object sender, EventArgs e)
-        {
-            if (PnlProductsPanel.IsOnLastPage()) return;
-            this.currentPage += 1;
-            this.PnlProductsPanel.ArrangeProductPanels(currentPage);
-        }
-
-        private void BtnPrevPage_Click(object sender, EventArgs e)
-        {
-            if (currentPage - 1 <= 0) return;
-            this.currentPage -= 1;
-            this.PnlProductsPanel.ArrangeProductPanels(currentPage);
-        }
 
         private void TbPosSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -87,9 +62,17 @@ namespace StoreManager
             }
         }
 
-        private void TbPosSearch_Enter(object sender, EventArgs e)
+        private void BtnPos_Click(object sender, EventArgs e)
         {
-            this.TbPosSearch.SelectAll();
+            //Panel contentPanel = this.Controls.Find("PnlContent", true)[0] as Panel;
+            //this.PnlContent.Controls.Add(buyView);
+            ShowUserCtrl(buyView);
+        }
+
+        private void ShowUserCtrl(UserControl userControl)
+        {
+            this.PnlContent.Controls.Clear();
+            this.PnlContent.Controls.Add(userControl);
         }
     }
 }

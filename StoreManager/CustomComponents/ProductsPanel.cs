@@ -281,9 +281,12 @@ namespace CustomComponents
         //    this.Refresh();
         //}
 
+        // this does not work (not using it anyways)
         public void PanelSizeUpdated(int currentPage)
         {
             this.UpdateCountPerRow();
+            this.UpdateCountPerColumn();
+            this.totalCountPerDisplay = this.countPerColumn * this.countPerRow;
             this.ArrangeProductPanels(currentPage);
             this.Refresh();
         }

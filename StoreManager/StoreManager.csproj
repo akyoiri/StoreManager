@@ -157,6 +157,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsrCtrlCashiering.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrCtrlCashiering.Designer.cs">
+      <DependentUpon>UsrCtrlCashiering.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomComponents\ProductsPanel.resx">
       <DependentUpon>ProductsPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +182,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsrCtrlCashiering.resx">
+      <DependentUpon>UsrCtrlCashiering.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Config\Tax.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
