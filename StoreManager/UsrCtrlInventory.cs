@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreManager.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,12 +11,15 @@ using System.Windows.Forms;
 
 namespace StoreManager
 {
-    public partial class Inventory : Form
+    public partial class UsrCtrlInventory : UserControl
     {
-        public Inventory()
+
+        private DBConnect dbConnection;
+
+        public UsrCtrlInventory(DBConnect dbConnection)
         {
             InitializeComponent();
+            this.dbConnection = dbConnection;
         }
-
     }
 }

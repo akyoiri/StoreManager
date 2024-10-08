@@ -117,6 +117,7 @@ namespace StoreManager
             this.BtnInventory.TextColor = System.Drawing.Color.Black;
             this.BtnInventory.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.BtnInventory.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.BtnInventory.Click += new System.EventHandler(this.BtnInventory_Click);
             // 
             // BtnPos
             // 
