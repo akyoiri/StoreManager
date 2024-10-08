@@ -26,6 +26,7 @@ namespace StoreManager
 
         private ProductsAndOrdersLinker productsAndOrdersLinker;
         private UsrCtrlCashiering buyView;
+        private UsrCtrlInventory inventoryView;
 
         public MainWindow()
         {
@@ -36,6 +37,7 @@ namespace StoreManager
             //this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
             //this.PnlProductsPanel.PanelSizeUpdated();
             this.buyView = new UsrCtrlCashiering(this.dbConnection);
+            this.inventoryView = new UsrCtrlInventory(this.dbConnection);
 
         }
 
@@ -43,6 +45,7 @@ namespace StoreManager
         {
 
             buyView.Size = this.PnlContent.Size;
+            inventoryView.Size = this.PnlContent.Size;
             buyView.InitializeCardView();
         }
 
@@ -73,6 +76,11 @@ namespace StoreManager
         {
             this.PnlContent.Controls.Clear();
             this.PnlContent.Controls.Add(userControl);
+        }
+
+        private void BtnInventory_Click(object sender, EventArgs e)
+        {
+            ShowUserCtrl(inventoryView);
         }
     }
 }

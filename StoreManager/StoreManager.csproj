@@ -142,12 +142,6 @@
     <Compile Include="CustomComponents\StoreObjects.cs" />
     <Compile Include="Database\DbConnection.cs" />
     <Compile Include="Extensions\GraphicsExtension.cs" />
-    <Compile Include="Inventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory.Designer.cs">
-      <DependentUpon>Inventory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Icons.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -163,11 +157,14 @@
     <Compile Include="UsrCtrlCashiering.Designer.cs">
       <DependentUpon>UsrCtrlCashiering.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsrCtrlInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrCtrlInventory.Designer.cs">
+      <DependentUpon>UsrCtrlInventory.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomComponents\ProductsPanel.resx">
       <DependentUpon>ProductsPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.resx">
-      <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -184,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="UsrCtrlCashiering.resx">
       <DependentUpon>UsrCtrlCashiering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsrCtrlInventory.resx">
+      <DependentUpon>UsrCtrlInventory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Config\Tax.json" />
     <None Include="packages.config" />
