@@ -44,8 +44,8 @@ namespace StoreManager
         private void MainWindow_Load(object sender, EventArgs e)
         {
 
-            buyView.Dock = DockStyle.Fill;
-            inventoryView.Dock = DockStyle.Fill;
+            buyView.Size = this.PnlContent.Size;
+            inventoryView.Size = this.PnlContent.Size;
             buyView.InitializeCardView();
         }
 

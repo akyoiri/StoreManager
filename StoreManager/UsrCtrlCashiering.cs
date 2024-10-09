@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace StoreManager
 
         public void InitializeCardView()
         {
-
+            Debug.WriteLine(this.PanelPOS.Size);
             this.PnlProductsPanel.InitializeItems(dbConnection.GetItemList(), this.BtnPdpClicked);
             this.PnlProductsPanel.InitializeCards();
             this.PnlProductsPanel.ArrangeProductPanels(currentPage);
