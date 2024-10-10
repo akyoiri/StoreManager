@@ -42,6 +42,7 @@ namespace StoreManager
 
             this.PnlOrdersPanel.InitializeCheckoutLabels(this.LblTotalOutput, this.LblTaxOutput, this.LblSubtotalOutput);
             this.CmbSizes.Items.AddRange(dbConnection.GetSizesList());
+            UpdatePaginationText();
         }
 
         public void BtnPdpClicked(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace StoreManager
             if (PnlProductsPanel.IsOnLastPage()) return;
             this.currentPage += 1;
             this.PnlProductsPanel.ArrangeProductPanels(currentPage);
+            UpdatePaginationText();
         }
 
         private void BtnPrevPage_Click(object sender, EventArgs e)
@@ -64,6 +66,7 @@ namespace StoreManager
             if (currentPage - 1 <= 0) return;
             this.currentPage -= 1;
             this.PnlProductsPanel.ArrangeProductPanels(currentPage);
+            UpdatePaginationText();
         }
 
         private void TbPosSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,6 +87,21 @@ namespace StoreManager
         private void TbPosSearch_Enter(object sender, EventArgs e)
         {
             this.TbPosSearch.SelectAll();
+        }
+
+        public void CenterPagination()
+        {
+            int paginationWidth = this.PanelPagination.Width;
+            int paginationContainerWidth = this.PanelPaginationContainer.Width;
+
+            this.PanelPagination.Location = new Point(paginationContainerWidth/2 - paginationWidth/2, this.PanelPagination.Location.Y);
+        }
+
+        public void UpdatePaginationText()
+        {
+            int currentPage = this.PnlProductsPanel.Currentpage;
+            int numOfPages = this.PnlProductsPanel.Lastpage;
+            this.LblPaginationText.Text = currentPage + " of " + numOfPages;
         }
 
     }

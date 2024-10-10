@@ -32,6 +32,7 @@ namespace StoreManager
         {
             //DBConnect dbConnection = new DBConnect();
             InitializeComponent();
+            //this.BtnCashier.Togg;
 
             //this.PnlProductsPanel.InitializeDisplay(dbConnection.GetItemList(), BtnPdpClicked);
             //this.productsAndOrdersLinker = new ProductsAndOrdersLinker(this.PnlOrdersPanel, this.PnlProductsPanel);
@@ -47,6 +48,7 @@ namespace StoreManager
             buyView.Size = this.PnlContent.Size;
             inventoryView.Size = this.PnlContent.Size;
             buyView.InitializeCardView();
+            buyView.CenterPagination();
         }
 
 

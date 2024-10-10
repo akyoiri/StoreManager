@@ -215,5 +215,8 @@
   <ItemGroup>
     <Content Include="Resources\search_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CompoundComponents\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

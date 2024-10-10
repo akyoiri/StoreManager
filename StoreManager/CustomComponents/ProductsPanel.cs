@@ -150,8 +150,8 @@ namespace CustomComponents
         int countPerRow;
         int countPerColumn;
         int totalCountPerDisplay;
-        int currentPage = 1;
-        int lastPage;
+        private int currentPage = 1;
+        private int lastPage;
 
         public ProductsPanel()
         {
@@ -318,6 +318,10 @@ namespace CustomComponents
         {
             return this.currentPage == this.lastPage;
         }
+
+        public int Lastpage { get { return this.lastPage; } }
+
+        public int Currentpage {  get { return this.currentPage; } }
 
     }
 

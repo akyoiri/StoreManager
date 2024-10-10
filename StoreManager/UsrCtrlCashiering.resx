@@ -117,4 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelPaginationContainer.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAApcAAAAbCAYAAAApgaQbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVHhe7djBCYAwEETR9F9P+lNyiCB6iDiBPbwHgj8V
+        DNsAAGCL3vsxP6211lprrVd7/F8eDwAA8MFtTxqXAAAAAEAJLpcAAMQYlwAAxBiXAAAAAEA9LpcAAMQY
+        lwAAxBiXAAAAAEA9LpcAAMQYlwAAxBiXAAAAAEA9LpcAAMQYlwAAxBiXAAAAAEA9LpcAAMQYlwAAxBiX
+        AADsYVwCAPDH654cj/PTWmuttdZ6tcc/AAAEtXYCVWlpmiSPuhAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="PanelPagination.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAP8AAAAaCAYAAAB4gYr7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACASURBVHhe7dWxDYAwFEPB7D9P9gNR/AIhFsi7kxA41I4X
+        ELf3vuY9jyzLZ+WP3x/AcfQdol7ldxNAlPJDh+WHKH2HKMsPKD+UWH6I0neIsvyA8kOJ5YcofYcoyw8o
+        P5RYfojSd4iy/IDyQ4nlhyh9h6hP+Z+DOZxvWZbPy0DaWjcVC/NFj3a4ZQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnNextPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEoAAAAaCAYAAAAQXsqGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABlSURBVFhH7dAxDQAgEMBAlLxl8IcM9gdGQgipgA43dWuJ
+        lj3anPrJvke9gm6OghwFOQpyFOQoyFGQoyBHQY6CHAU5CnIU5CjIUZCjIEdBjoIcBTkKchTkKMhRkKOg
+        EjXHK+hQcyy4yRV3PW8NYQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnPrevPage.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEoAAAAaCAYAAAAQXsqGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABlSURBVFhH7dAxDQAgEMBAlLxl8IcM9gdGQgipgA43dWuJ
+        lj3anPrJvke9gm6OghwFOQpyFOQoyFGQoyBHQY6CHAU5CnIU5CjIUZCjIEdBjoIcBTkKchTkKMhRkKOg
+        EjXHK+hQcyy4yRV3PW8NYQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

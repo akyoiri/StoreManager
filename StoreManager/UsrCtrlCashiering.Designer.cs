@@ -1,4 +1,6 @@
-﻿namespace StoreManager
+﻿using CustomComponents;
+
+namespace StoreManager
 {
     partial class UsrCtrlCashiering
     {
@@ -28,7 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsrCtrlCashiering));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.PanelPOS = new System.Windows.Forms.Panel();
+            this.PanelPaginationContainer = new Bunifu.UI.WinForms.BunifuPanel();
+            this.PanelPagination = new Bunifu.UI.WinForms.BunifuPanel();
+            this.LblPaginationText = new Bunifu.UI.WinForms.BunifuLabel();
+            this.BtnNextPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.BtnPrevPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             this.TbPosSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +47,6 @@
             this.crownComboBox2 = new ReaLTaiizor.Controls.CrownComboBox();
             this.crownComboBox3 = new ReaLTaiizor.Controls.CrownComboBox();
             this.CmbSizes = new ReaLTaiizor.Controls.CrownComboBox();
-            this.BtnPrevPage = new System.Windows.Forms.Button();
-            this.BtnNextPage = new System.Windows.Forms.Button();
             this.PnlCheckout = new System.Windows.Forms.Panel();
             this.BtnCheckout = new ReaLTaiizor.Controls.Button();
             this.LblTaxOutput = new ReaLTaiizor.Controls.HeaderLabel();
@@ -50,6 +58,8 @@
             this.PnlProductsPanel = new CustomComponents.ProductsPanel();
             this.PnlOrdersPanel = new CustomComponents.OrdersPanel();
             this.PanelPOS.SuspendLayout();
+            this.PanelPaginationContainer.SuspendLayout();
+            this.PanelPagination.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.PnlCheckout.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelPOS.BackColor = System.Drawing.Color.Silver;
+            this.PanelPOS.Controls.Add(this.PanelPaginationContainer);
             this.PanelPOS.Controls.Add(this.materialCard1);
             this.PanelPOS.Controls.Add(this.label3);
             this.PanelPOS.Controls.Add(this.label2);
@@ -67,8 +78,6 @@
             this.PanelPOS.Controls.Add(this.crownComboBox2);
             this.PanelPOS.Controls.Add(this.crownComboBox3);
             this.PanelPOS.Controls.Add(this.CmbSizes);
-            this.PanelPOS.Controls.Add(this.BtnPrevPage);
-            this.PanelPOS.Controls.Add(this.BtnNextPage);
             this.PanelPOS.Controls.Add(this.PnlCheckout);
             this.PanelPOS.Controls.Add(this.PnlProductsPanel);
             this.PanelPOS.Controls.Add(this.PnlOrdersPanel);
@@ -77,6 +86,242 @@
             this.PanelPOS.Name = "PanelPOS";
             this.PanelPOS.Size = new System.Drawing.Size(1067, 645);
             this.PanelPOS.TabIndex = 1;
+            // 
+            // PanelPaginationContainer
+            // 
+            this.PanelPaginationContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PanelPaginationContainer.BackgroundColor = System.Drawing.Color.Transparent;
+            this.PanelPaginationContainer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelPaginationContainer.BackgroundImage")));
+            this.PanelPaginationContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelPaginationContainer.BorderColor = System.Drawing.Color.Transparent;
+            this.PanelPaginationContainer.BorderRadius = 3;
+            this.PanelPaginationContainer.BorderThickness = 1;
+            this.PanelPaginationContainer.Controls.Add(this.PanelPagination);
+            this.PanelPaginationContainer.Location = new System.Drawing.Point(3, 615);
+            this.PanelPaginationContainer.Name = "PanelPaginationContainer";
+            this.PanelPaginationContainer.ShowBorders = true;
+            this.PanelPaginationContainer.Size = new System.Drawing.Size(663, 27);
+            this.PanelPaginationContainer.TabIndex = 10;
+            // 
+            // PanelPagination
+            // 
+            this.PanelPagination.BackgroundColor = System.Drawing.Color.Transparent;
+            this.PanelPagination.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelPagination.BackgroundImage")));
+            this.PanelPagination.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelPagination.BorderColor = System.Drawing.Color.Transparent;
+            this.PanelPagination.BorderRadius = 3;
+            this.PanelPagination.BorderThickness = 1;
+            this.PanelPagination.Controls.Add(this.LblPaginationText);
+            this.PanelPagination.Controls.Add(this.BtnNextPage);
+            this.PanelPagination.Controls.Add(this.BtnPrevPage);
+            this.PanelPagination.Location = new System.Drawing.Point(202, 0);
+            this.PanelPagination.Name = "PanelPagination";
+            this.PanelPagination.ShowBorders = true;
+            this.PanelPagination.Size = new System.Drawing.Size(255, 26);
+            this.PanelPagination.TabIndex = 10;
+            // 
+            // LblPaginationText
+            // 
+            this.LblPaginationText.AllowParentOverrides = false;
+            this.LblPaginationText.AutoEllipsis = false;
+            this.LblPaginationText.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblPaginationText.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblPaginationText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPaginationText.Location = new System.Drawing.Point(104, 4);
+            this.LblPaginationText.Name = "LblPaginationText";
+            this.LblPaginationText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblPaginationText.Size = new System.Drawing.Size(50, 19);
+            this.LblPaginationText.TabIndex = 1;
+            this.LblPaginationText.Text = "2 of 22";
+            this.LblPaginationText.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblPaginationText.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // BtnNextPage
+            // 
+            this.BtnNextPage.AllowAnimations = true;
+            this.BtnNextPage.AllowMouseEffects = true;
+            this.BtnNextPage.AllowToggling = false;
+            this.BtnNextPage.AnimationSpeed = 200;
+            this.BtnNextPage.AutoGenerateColors = false;
+            this.BtnNextPage.AutoRoundBorders = false;
+            this.BtnNextPage.AutoSizeLeftIcon = true;
+            this.BtnNextPage.AutoSizeRightIcon = true;
+            this.BtnNextPage.BackColor = System.Drawing.Color.Transparent;
+            this.BtnNextPage.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.BtnNextPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNextPage.BackgroundImage")));
+            this.BtnNextPage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNextPage.ButtonText = "Next";
+            this.BtnNextPage.ButtonTextMarginLeft = 0;
+            this.BtnNextPage.ColorContrastOnClick = 45;
+            this.BtnNextPage.ColorContrastOnHover = 45;
+            this.BtnNextPage.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnNextPage.CustomizableEdges = borderEdges1;
+            this.BtnNextPage.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnNextPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnNextPage.DisabledFillColor = System.Drawing.Color.Empty;
+            this.BtnNextPage.DisabledForecolor = System.Drawing.Color.Empty;
+            this.BtnNextPage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnNextPage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnNextPage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnNextPage.ForeColor = System.Drawing.Color.White;
+            this.BtnNextPage.IconLeft = null;
+            this.BtnNextPage.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNextPage.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnNextPage.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnNextPage.IconMarginLeft = 11;
+            this.BtnNextPage.IconPadding = 10;
+            this.BtnNextPage.IconRight = null;
+            this.BtnNextPage.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnNextPage.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnNextPage.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnNextPage.IconSize = 25;
+            this.BtnNextPage.IdleBorderColor = System.Drawing.Color.Empty;
+            this.BtnNextPage.IdleBorderRadius = 0;
+            this.BtnNextPage.IdleBorderThickness = 0;
+            this.BtnNextPage.IdleFillColor = System.Drawing.Color.Empty;
+            this.BtnNextPage.IdleIconLeftImage = null;
+            this.BtnNextPage.IdleIconRightImage = null;
+            this.BtnNextPage.IndicateFocus = false;
+            this.BtnNextPage.Location = new System.Drawing.Point(181, 0);
+            this.BtnNextPage.Name = "BtnNextPage";
+            this.BtnNextPage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnNextPage.OnDisabledState.BorderRadius = 1;
+            this.BtnNextPage.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNextPage.OnDisabledState.BorderThickness = 1;
+            this.BtnNextPage.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnNextPage.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnNextPage.OnDisabledState.IconLeftImage = null;
+            this.BtnNextPage.OnDisabledState.IconRightImage = null;
+            this.BtnNextPage.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnNextPage.onHoverState.BorderRadius = 1;
+            this.BtnNextPage.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNextPage.onHoverState.BorderThickness = 1;
+            this.BtnNextPage.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnNextPage.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnNextPage.onHoverState.IconLeftImage = null;
+            this.BtnNextPage.onHoverState.IconRightImage = null;
+            this.BtnNextPage.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnNextPage.OnIdleState.BorderRadius = 1;
+            this.BtnNextPage.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNextPage.OnIdleState.BorderThickness = 1;
+            this.BtnNextPage.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.BtnNextPage.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnNextPage.OnIdleState.IconLeftImage = null;
+            this.BtnNextPage.OnIdleState.IconRightImage = null;
+            this.BtnNextPage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnNextPage.OnPressedState.BorderRadius = 1;
+            this.BtnNextPage.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnNextPage.OnPressedState.BorderThickness = 1;
+            this.BtnNextPage.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnNextPage.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnNextPage.OnPressedState.IconLeftImage = null;
+            this.BtnNextPage.OnPressedState.IconRightImage = null;
+            this.BtnNextPage.Size = new System.Drawing.Size(74, 26);
+            this.BtnNextPage.TabIndex = 0;
+            this.BtnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnNextPage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnNextPage.TextMarginLeft = 0;
+            this.BtnNextPage.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnNextPage.UseDefaultRadiusAndThickness = true;
+            this.BtnNextPage.Click += new System.EventHandler(this.BtnNextPage_Click);
+            // 
+            // BtnPrevPage
+            // 
+            this.BtnPrevPage.AllowAnimations = true;
+            this.BtnPrevPage.AllowMouseEffects = true;
+            this.BtnPrevPage.AllowToggling = false;
+            this.BtnPrevPage.AnimationSpeed = 200;
+            this.BtnPrevPage.AutoGenerateColors = false;
+            this.BtnPrevPage.AutoRoundBorders = false;
+            this.BtnPrevPage.AutoSizeLeftIcon = true;
+            this.BtnPrevPage.AutoSizeRightIcon = true;
+            this.BtnPrevPage.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPrevPage.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.BtnPrevPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnPrevPage.BackgroundImage")));
+            this.BtnPrevPage.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnPrevPage.ButtonText = "Prev";
+            this.BtnPrevPage.ButtonTextMarginLeft = 0;
+            this.BtnPrevPage.ColorContrastOnClick = 45;
+            this.BtnPrevPage.ColorContrastOnHover = 45;
+            this.BtnPrevPage.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnPrevPage.CustomizableEdges = borderEdges2;
+            this.BtnPrevPage.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnPrevPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnPrevPage.DisabledFillColor = System.Drawing.Color.Empty;
+            this.BtnPrevPage.DisabledForecolor = System.Drawing.Color.Empty;
+            this.BtnPrevPage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnPrevPage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnPrevPage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnPrevPage.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevPage.IconLeft = null;
+            this.BtnPrevPage.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnPrevPage.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnPrevPage.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnPrevPage.IconMarginLeft = 11;
+            this.BtnPrevPage.IconPadding = 10;
+            this.BtnPrevPage.IconRight = null;
+            this.BtnPrevPage.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnPrevPage.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnPrevPage.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnPrevPage.IconSize = 25;
+            this.BtnPrevPage.IdleBorderColor = System.Drawing.Color.Empty;
+            this.BtnPrevPage.IdleBorderRadius = 0;
+            this.BtnPrevPage.IdleBorderThickness = 0;
+            this.BtnPrevPage.IdleFillColor = System.Drawing.Color.Empty;
+            this.BtnPrevPage.IdleIconLeftImage = null;
+            this.BtnPrevPage.IdleIconRightImage = null;
+            this.BtnPrevPage.IndicateFocus = false;
+            this.BtnPrevPage.Location = new System.Drawing.Point(0, 0);
+            this.BtnPrevPage.Name = "BtnPrevPage";
+            this.BtnPrevPage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnPrevPage.OnDisabledState.BorderRadius = 1;
+            this.BtnPrevPage.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnPrevPage.OnDisabledState.BorderThickness = 1;
+            this.BtnPrevPage.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnPrevPage.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnPrevPage.OnDisabledState.IconLeftImage = null;
+            this.BtnPrevPage.OnDisabledState.IconRightImage = null;
+            this.BtnPrevPage.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnPrevPage.onHoverState.BorderRadius = 1;
+            this.BtnPrevPage.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnPrevPage.onHoverState.BorderThickness = 1;
+            this.BtnPrevPage.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.BtnPrevPage.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevPage.onHoverState.IconLeftImage = null;
+            this.BtnPrevPage.onHoverState.IconRightImage = null;
+            this.BtnPrevPage.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnPrevPage.OnIdleState.BorderRadius = 1;
+            this.BtnPrevPage.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnPrevPage.OnIdleState.BorderThickness = 1;
+            this.BtnPrevPage.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.BtnPrevPage.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevPage.OnIdleState.IconLeftImage = null;
+            this.BtnPrevPage.OnIdleState.IconRightImage = null;
+            this.BtnPrevPage.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnPrevPage.OnPressedState.BorderRadius = 1;
+            this.BtnPrevPage.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnPrevPage.OnPressedState.BorderThickness = 1;
+            this.BtnPrevPage.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.BtnPrevPage.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnPrevPage.OnPressedState.IconLeftImage = null;
+            this.BtnPrevPage.OnPressedState.IconRightImage = null;
+            this.BtnPrevPage.Size = new System.Drawing.Size(74, 26);
+            this.BtnPrevPage.TabIndex = 0;
+            this.BtnPrevPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnPrevPage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnPrevPage.TextMarginLeft = 0;
+            this.BtnPrevPage.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnPrevPage.UseDefaultRadiusAndThickness = true;
+            this.BtnPrevPage.Click += new System.EventHandler(this.BtnPrevPage_Click);
             // 
             // materialCard1
             // 
@@ -202,28 +447,6 @@
             this.CmbSizes.Name = "CmbSizes";
             this.CmbSizes.Size = new System.Drawing.Size(121, 21);
             this.CmbSizes.TabIndex = 5;
-            // 
-            // BtnPrevPage
-            // 
-            this.BtnPrevPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnPrevPage.Location = new System.Drawing.Point(115, 619);
-            this.BtnPrevPage.Name = "BtnPrevPage";
-            this.BtnPrevPage.Size = new System.Drawing.Size(130, 23);
-            this.BtnPrevPage.TabIndex = 4;
-            this.BtnPrevPage.Text = "Previous Page";
-            this.BtnPrevPage.UseVisualStyleBackColor = true;
-            this.BtnPrevPage.Click += new System.EventHandler(this.BtnPrevPage_Click);
-            // 
-            // BtnNextPage
-            // 
-            this.BtnNextPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnNextPage.Location = new System.Drawing.Point(251, 619);
-            this.BtnNextPage.Name = "BtnNextPage";
-            this.BtnNextPage.Size = new System.Drawing.Size(129, 23);
-            this.BtnNextPage.TabIndex = 3;
-            this.BtnNextPage.Text = "Next Page";
-            this.BtnNextPage.UseVisualStyleBackColor = true;
-            this.BtnNextPage.Click += new System.EventHandler(this.BtnNextPage_Click);
             // 
             // PnlCheckout
             // 
@@ -365,6 +588,9 @@
             this.Size = new System.Drawing.Size(1067, 645);
             this.PanelPOS.ResumeLayout(false);
             this.PanelPOS.PerformLayout();
+            this.PanelPaginationContainer.ResumeLayout(false);
+            this.PanelPagination.ResumeLayout(false);
+            this.PanelPagination.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.PnlCheckout.ResumeLayout(false);
             this.PnlCheckout.PerformLayout();
@@ -383,8 +609,6 @@
         private ReaLTaiizor.Controls.CrownComboBox crownComboBox2;
         private ReaLTaiizor.Controls.CrownComboBox crownComboBox3;
         private ReaLTaiizor.Controls.CrownComboBox CmbSizes;
-        private System.Windows.Forms.Button BtnPrevPage;
-        private System.Windows.Forms.Button BtnNextPage;
         private System.Windows.Forms.Panel PnlCheckout;
         private ReaLTaiizor.Controls.Button BtnCheckout;
         private ReaLTaiizor.Controls.HeaderLabel LblTaxOutput;
@@ -395,5 +619,10 @@
         private ReaLTaiizor.Controls.HeaderLabel LblTotal;
         private CustomComponents.ProductsPanel PnlProductsPanel;
         private CustomComponents.OrdersPanel PnlOrdersPanel;
+        private Bunifu.UI.WinForms.BunifuPanel PanelPagination;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnPrevPage;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnNextPage;
+        private Bunifu.UI.WinForms.BunifuPanel PanelPaginationContainer;
+        private Bunifu.UI.WinForms.BunifuLabel LblPaginationText;
     }
 }
