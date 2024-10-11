@@ -40,7 +40,6 @@ namespace StoreManager
             this.BtnNextPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnPrevPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
-            this.TbPosSearch = new CustomComponents.CustomMaterialMaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,12 +54,9 @@ namespace StoreManager
             this.LblSubtotal = new ReaLTaiizor.Controls.HeaderLabel();
             this.LblTax = new ReaLTaiizor.Controls.HeaderLabel();
             this.LblTotal = new ReaLTaiizor.Controls.HeaderLabel();
-            this.PnlProductsPanel = new CustomComponents.ProductsPanel();
-            this.PnlOrdersPanel = new CustomComponents.OrdersPanel();
             this.PanelPOS.SuspendLayout();
             this.PanelPaginationContainer.SuspendLayout();
             this.PanelPagination.SuspendLayout();
-            this.materialCard1.SuspendLayout();
             this.PnlCheckout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,13 +75,12 @@ namespace StoreManager
             this.PanelPOS.Controls.Add(this.crownComboBox3);
             this.PanelPOS.Controls.Add(this.CmbSizes);
             this.PanelPOS.Controls.Add(this.PnlCheckout);
-            this.PanelPOS.Controls.Add(this.PnlProductsPanel);
-            this.PanelPOS.Controls.Add(this.PnlOrdersPanel);
             this.PanelPOS.Location = new System.Drawing.Point(0, 0);
             this.PanelPOS.Margin = new System.Windows.Forms.Padding(0);
             this.PanelPOS.Name = "PanelPOS";
             this.PanelPOS.Size = new System.Drawing.Size(1067, 645);
             this.PanelPOS.TabIndex = 1;
+            this.PanelPOS.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPOS_Paint);
             // 
             // PanelPaginationContainer
             // 
@@ -328,7 +323,6 @@ namespace StoreManager
             this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.TbPosSearch);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(7, 7);
@@ -338,52 +332,6 @@ namespace StoreManager
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(652, 47);
             this.materialCard1.TabIndex = 9;
-            // 
-            // TbPosSearch
-            // 
-            this.TbPosSearch.AllowPromptAsInput = true;
-            this.TbPosSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TbPosSearch.AnimateReadOnly = false;
-            this.TbPosSearch.AsciiOnly = false;
-            this.TbPosSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.TbPosSearch.BeepOnError = false;
-            this.TbPosSearch.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbPosSearch.Depth = 0;
-            this.TbPosSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.TbPosSearch.HidePromptOnLeave = false;
-            this.TbPosSearch.HideSelection = true;
-            this.TbPosSearch.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.TbPosSearch.LeadingIcon = null;
-            this.TbPosSearch.Location = new System.Drawing.Point(0, -1);
-            this.TbPosSearch.Margin = new System.Windows.Forms.Padding(0);
-            this.TbPosSearch.Mask = "";
-            this.TbPosSearch.MaxLength = 32767;
-            this.TbPosSearch.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.TbPosSearch.Name = "TbPosSearch";
-            this.TbPosSearch.PasswordChar = '\0';
-            this.TbPosSearch.PrefixSuffixText = null;
-            this.TbPosSearch.PromptChar = '_';
-            this.TbPosSearch.ReadOnly = false;
-            this.TbPosSearch.RejectInputOnFirstFailure = false;
-            this.TbPosSearch.ResetOnPrompt = true;
-            this.TbPosSearch.ResetOnSpace = true;
-            this.TbPosSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TbPosSearch.SelectedText = "";
-            this.TbPosSearch.SelectionLength = 0;
-            this.TbPosSearch.SelectionStart = 0;
-            this.TbPosSearch.ShortcutsEnabled = true;
-            this.TbPosSearch.Size = new System.Drawing.Size(655, 48);
-            this.TbPosSearch.SkipLiterals = true;
-            this.TbPosSearch.TabIndex = 0;
-            this.TbPosSearch.TabStop = false;
-            this.TbPosSearch.Text = "Search";
-            this.TbPosSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbPosSearch.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.TbPosSearch.TrailingIcon = null;
-            this.TbPosSearch.UnderlineColor = System.Drawing.Color.Black;
-            this.TbPosSearch.UseSystemPasswordChar = false;
-            this.TbPosSearch.ValidatingType = null;
-            this.TbPosSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbPosSearch_KeyPress);
             // 
             // label3
             // 
@@ -557,28 +505,6 @@ namespace StoreManager
             this.LblTotal.TabIndex = 0;
             this.LblTotal.Text = "TOTAL";
             // 
-            // PnlProductsPanel
-            // 
-            this.PnlProductsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlProductsPanel.Location = new System.Drawing.Point(3, 68);
-            this.PnlProductsPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.PnlProductsPanel.Name = "PnlProductsPanel";
-            this.PnlProductsPanel.Size = new System.Drawing.Size(663, 544);
-            this.PnlProductsPanel.TabIndex = 0;
-            // 
-            // PnlOrdersPanel
-            // 
-            this.PnlOrdersPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlOrdersPanel.AutoScroll = true;
-            this.PnlOrdersPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.PnlOrdersPanel.Location = new System.Drawing.Point(672, 68);
-            this.PnlOrdersPanel.Name = "PnlOrdersPanel";
-            this.PnlOrdersPanel.Size = new System.Drawing.Size(392, 353);
-            this.PnlOrdersPanel.TabIndex = 0;
-            // 
             // UsrCtrlCashiering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,7 +517,6 @@ namespace StoreManager
             this.PanelPaginationContainer.ResumeLayout(false);
             this.PanelPagination.ResumeLayout(false);
             this.PanelPagination.PerformLayout();
-            this.materialCard1.ResumeLayout(false);
             this.PnlCheckout.ResumeLayout(false);
             this.PnlCheckout.PerformLayout();
             this.ResumeLayout(false);

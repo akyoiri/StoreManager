@@ -104,5 +104,9 @@ namespace StoreManager
             this.LblPaginationText.Text = currentPage + " of " + numOfPages;
         }
 
+        private void PanelPOS_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

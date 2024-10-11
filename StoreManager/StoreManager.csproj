@@ -163,6 +163,12 @@
     <Compile Include="UsrCtrlInventory.Designer.cs">
       <DependentUpon>UsrCtrlInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsrCtrllAnalytics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsrCtrllAnalytics.Designer.cs">
+      <DependentUpon>UsrCtrllAnalytics.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomComponents\ProductsPanel.resx">
       <DependentUpon>ProductsPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsrCtrlInventory.resx">
       <DependentUpon>UsrCtrlInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsrCtrllAnalytics.resx">
+      <DependentUpon>UsrCtrllAnalytics.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Config\Tax.json" />
     <None Include="packages.config" />
